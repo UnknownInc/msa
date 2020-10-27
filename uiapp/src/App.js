@@ -1,20 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { observer } from "mobx-react-lite";
-import useStores from './stores/useStores';
+
+
+import './App.css';
+
+import HomePage from './pages/Home';
 
 const App = observer(( )=>{
-  const {uiState} = useStores();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Ready to start <code>`coding`</code>.
-        </p>
-        <p>Window Size: {uiState.windowDimensions.width} x {uiState.windowDimensions.height}</p>
-      </header>
-    </div>
+    <Router>
+      <main>
+        <Switch>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </main>
+    </Router>
   );
 });
 

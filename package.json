@@ -2,7 +2,8 @@
   "name": "msa",
   "version": "0.0.0",
   "private": true,
-  "scripts": {    "build":"babel src -d build && cp -r src/views ./build",
+  "scripts": {
+    "build": "babel src -d build && cp -r src/views ./build",
     "dev": "nodemon -w 'src/**/*' -r dotenv/config --exec babel-node src/server.js",
     "start": "babel-node src/server.js"
   },
@@ -12,7 +13,8 @@
     "express": "~4.17.1",
     "http-errors": "~1.8.0",
     "jade": "~1.11.0",
-    "morgan": "~1.10.0"
+    "morgan": "~1.10.0",
+    "node-uuid": "^1.4.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",

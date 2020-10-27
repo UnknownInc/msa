@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dockerbuild": "docker build -t msa .",
     "build": "babel src -d build && cp -r src/views ./build",
     "dev": "nodemon -w 'src/**/*' -r dotenv/config --exec babel-node src/server.js",
-    "start": "babel-node src/server.js"
+    "start": "node build/server.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.5",

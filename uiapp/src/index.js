@@ -12,12 +12,11 @@ function Root() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
   const apptheme = React.useMemo(
-    () =>
-      createMuiTheme(Object.assign(theme, {
-        palette: {
-          type: prefersDarkMode ? 'dark' : 'light',
-        },
-      })),
+    () =>{
+      const mtheme = Object.assign({},theme);
+      mtheme.palette.type= (prefersDarkMode ? 'dark' : 'light');
+      return createMuiTheme(theme);
+    },
     [prefersDarkMode],
   );
 

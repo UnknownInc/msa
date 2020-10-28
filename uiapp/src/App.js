@@ -9,7 +9,7 @@ import HomePage from './pages/Home';
 const App = observer(( )=>{
   return (
     <Router>
-      <main>
+      <main className="App">
         <Switch>
           <Route path="/">
             <HomePage />

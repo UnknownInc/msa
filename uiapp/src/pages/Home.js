@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Footer from '../components/Footer';
 
 import logo from '../logo.svg';
 import useStores from '../stores/useStores';
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     display:'flex',
-    alignItems:'center',
+    alignItems:'stretch',
     justifyContent:'center',
   },
   logocard:{
@@ -30,13 +31,16 @@ const HomePage = observer(()=>{
   const {uiState} = useStores();
 
   return (
-    <Grid container className={classes.root}>
-      <Paper elevation={3} className={classes.logocard}>
-        <img src={logo} alt="logo" className={classes.logo}/>
-        <Typography variant="h4">Ready to start <code>coding</code>?</Typography>
-        <p>Window Size: {uiState.windowDimensions.width} x {uiState.windowDimensions.height}</p>
-      </Paper>
-    </Grid>
+    <React.Fragment>
+      <Grid container className={classes.root}>
+        <Paper elevation={0} className={classes.logocard}>
+          <img src={logo} alt="logo" className={classes.logo}/>
+          <Typography variant="h4">Ready to start <code>coding</code>?</Typography>
+          <p>Window Size: {uiState.windowDimensions.width} x {uiState.windowDimensions.height}</p>
+        </Paper>
+      </Grid>
+      <Footer/>
+    </React.Fragment>
   );
 })
 

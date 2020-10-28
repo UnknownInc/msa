@@ -1,4 +1,4 @@
-import { makeAutoObservable, observable, computed, asStructure } from "mobx"
+import { makeAutoObservable, observable, } from "mobx"
 
 export default class UiState {
     language = "en_US"

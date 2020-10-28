@@ -23,6 +23,8 @@ app.use(express.static(path.join(__dirname, '../uiapp/build')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+app.use('/api', require('./api'));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
